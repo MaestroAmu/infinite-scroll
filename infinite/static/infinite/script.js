@@ -14,6 +14,16 @@ window.onscroll = () => {
     }
 };
 
+document.addEventListener('click', event => {
+    const element = event.target;
+    if (element.className === 'del') {
+        element.parentElement.style.animationPlayState = 'running';
+        element.parentElement.addEventListener('animationend', () => {
+            element.parentElement.remove();
+        })
+    }
+})
+
 // Load next set of posts
 function load() {
 
@@ -36,7 +46,7 @@ function add_post(contents) {
     // Create new post
     const post = document.createElement('div');
     post.className = 'post';
-    post.innerHTML = contents;
+    post.innerHTML = `${contents} <button class="del">Delete</button>`;
 
     // Add post to DOM
     document.querySelector('#posts').append(post);

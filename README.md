@@ -12,5 +12,5 @@
   * Django
 
 ### Project
-Infinite scroll achieved by JavaScript interacting with an API developed in the backend using python in django framework.
+Infinite scroll achieved by JavaScript interacting with an API developed in the backend using python in django framework. With Css animation to smoothly delete posts.
 
